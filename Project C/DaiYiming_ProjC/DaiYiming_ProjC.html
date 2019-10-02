@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" style = "overflow:hidden;overflow-y:auto;">
+
+<head>
+    <meta charset="utf-8" />
+    <title>DaiYiming_ProjC</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> <!-- bootstrapcdn -->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"><!-- font awesome -->
+    <link href="https://fonts.googleapis.com/css?family=Bitter|Inconsolata|Indie+Flower" rel="stylesheet">
+    <style>
+      .help{
+        font-family: Inconsolata, serif;
+        border: 5px solid #bdc3c7;
+        padding: 20px;
+        max-width:900px;
+        width: 100%;
+        margin: 20px auto;
+      }
+      .strong{
+        color: rgb(191, 42, 124);
+        font-size: 20px;
+
+      }
+      .button{
+        font-family: Bitter, serif;
+        border: 5px solid #bdc3c7;
+        padding: 20px;
+        max-width:900px;
+        width: 100%;
+        margin: 20px auto;
+      }
+
+      .title{
+        font-family: Inconsolata, serif;
+        border: 5px solid #bdc3c7;
+        font-size: 20px;
+        padding: 20px;
+        max-width:900px;
+        width: 100%;
+        margin: 20px auto;
+      }
+      h2{
+        font-size: 25px;
+      }
+    </style>
+
+
+</head>
+
+<body onload = "main()" onresize = "resize()" lang="en" style = "margin:0px;padding:0px;width:100%;height:100%;overflow:hidden;overflow-y:auto; ">
+
+    <canvas id="webgl" width="600" height="600"></canvas>
+
+    
+    <div class='button'>
+        <p>Different Lighting / Shading Mode:
+        <select onchange="changeLightingShading()" id = 'lightSelection'>
+          <option value="0">Blinn-Phong Lighting & Phong Shading</option>
+          <option value="1">Phong Lighting & Phong Shading</option>
+          <option value="2">Blinn-Phong Lighting & Gouraud Shading</option>
+          <option value="3">Phong Lighting & Gouraud Shading</option>
+        </select>
+      </br>
+        <button onclick="changeLighting()">Switch Lighting</button>
+        <button onclick="changeShading()">Switch Shading</button> 
+        <div id="lightMode" style="display:inline"> Blinn-Phong lighting
+        </div>&nbsp;&&nbsp;
+        <div id="shadeMode" style="display:inline"> Phong Shading
+        </div>
+        </p>
+    </div>
+
+   <div class="button">
+    <p>
+        <div id="stretcher">
+            <p>User-adjustabl R, G, B values (from 0 to 1.0) for ambient, diffuse, and specular light: </p>
+
+            <p>
+                Lamp_Ambient_R: <input id = "Lamp_Ambient_R" size = "3" value = "1.0" />&nbsp;
+                Lamp_Ambient_G: <input id = "Lamp_Ambient_G" size = "3" value = "1.0" />&nbsp;
+                Lamp_Ambient_B: <input id = "Lamp_Ambient_B" size = "3" value = "1.0" />
+                 <br />
+                Lamp_Diffuse_R: <input id = "Lamp_Diffuse_R" size = "3" value = "1.0" />&nbsp;&nbsp;
+                Lamp_Diffuse_G: <input id = "Lamp_Diffuse_G" size = "3" value = "1.0" />&nbsp;&nbsp;
+                Lamp_Diffuse_B: <input id = "Lamp_Diffuse_B" size = "3" value = "1.0" />
+                <br />
+                Lamp_Specular_R: <input id = "Lamp_Specular_R" size = "3" value = "1.0" />&nbsp;
+                Lamp_Specular_G: <input id = "Lamp_Specular_G" size = "3" value = "1.0" />&nbsp;
+                Lamp_Specular_B: <input id = "Lamp_Specular_B" size = "3" value = "1.0" />
+                <br />
+            </p>
+            
+            <button type = "button" id = "submit" onclick = "changeRGB()">Go! </button>
+            <button type = "button" id = "reset" onclick = "resetRGB()">Reset</button>
+        </div>
+    </p>
+   </div>
+   <div class = 'help'>
+        <p>Press the 'paw' button below for <span class="strong">instructions</span>!! <br /></p>
+        <button type="button" onclick="userInstructions()" class="btn btn-default btn-lg"><i class="fa fa-paw fa-fw"></i></button>
+        <div>
+            <p id="instructions"></p>
+        </div>
+    </div>
+
+
+    <script src="lib/webgl-utils.js"></script>
+    <script src="lib/webgl-debug.js"></script>
+    <script src="lib/cuon-utils.js"></script>
+    <script src="lib/cuon-matrix-mod.js"></script>
+    <script src="lights-JT.js"></script>
+    <script src="materials_Ayerdi04.js"></script>
+    <script src="DaiYiming_ProjC.js"></script>
+</body>
+
+</html>

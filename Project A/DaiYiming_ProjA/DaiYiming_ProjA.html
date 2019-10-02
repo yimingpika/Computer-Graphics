@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>DaiYiming_ProjA</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> <!-- bootstrapcdn -->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"><!-- font awesome -->
+    <link href="https://fonts.googleapis.com/css?family=Bitter|Inconsolata|Indie+Flower" rel="stylesheet">
+    <style>
+      body{
+        border: 20px solid #bdc3c7;
+        padding: 20px;
+        max-width:900px;
+        width: 100%;
+        margin: 20px auto;
+      }
+      .canvas{
+        border: 5px solid #bdc3c7;
+        max-width:900px;
+        margin: 20px 20px;
+      }
+      .help{
+        font-family: Inconsolata, serif;
+        border: 5px solid #bdc3c7;
+        padding: 20px;
+        max-width:900px;
+        width: 100%;
+        margin: 20px auto;
+      }
+      .strong{
+        color: rgb(191, 42, 124);
+        font-size: 20px;
+
+      }
+      .button{
+        font-family: Bitter, serif;
+        border: 5px solid #bdc3c7;
+        padding: 20px;
+        max-width:900px;
+        width: 100%;
+        margin: 20px auto;
+      }
+
+      .blank{
+        font-family: Indie Flower, serif;
+        border: 5px solid #bdc3c7;
+        font-size: 20px;
+        padding: 20px;
+        max-width:900px;
+        width: 100%;
+        margin: 20px auto;
+      }
+      .corner{
+        font-family: Indie Flower, serif;
+        border: 5px solid #bdc3c7;
+        font-size: 20px;
+        padding: 20px;
+        max-width:900px;
+        width: 100%;
+        margin: 20px auto;
+      }
+      .title{
+        font-family: Inconsolata, serif;
+        border: 5px solid #bdc3c7;
+        font-size: 20px;
+        padding: 20px;
+        max-width:900px;
+        width: 100%;
+        margin: 20px auto;
+      }
+      h2{
+        font-size: 25px;
+      }
+    </style>
+  </head>
+
+  <body onload="main()">
+    <div class="title">
+      <h2>Spinning Combination of Plane & Fish <br /></h2>
+      <h3>DaiYiming_ProjA YDF9097</h3>
+    </div>
+    
+    <div class="blank">
+      <p>Plane's Movement: <br /></p>
+      <p id="sentence">The plane is spinning at 30 degrees / second. <br />
+        The Hopter is spinning at 600 degrees / second. <br />
+        The Butterfly is spinning at 300 degrees / second. 
+      </p>
+    </div>
+
+    <div class='corner'>
+      <p>Fish's Location <br /></p>
+      <p id='word'>
+      </p>
+      
+    </div>
+    <div class='help'>
+      <p>Press the 'paw' button below for <span class="strong">instructions</span>!! <br /></p>
+      <button type="button" onclick="userInstructions()" class="btn btn-default btn-lg"><i class="fa fa-paw fa-fw"></i></button>
+      <div>
+        <p id="instructions"></p>
+      </div>
+    </div>
+
+    <canvas id="canvas" width="500" height="500" class="canvas"></canvas>
+  
+    <div class="button">
+      <p><strong>Control Panel</strong><br /></p>
+      <div >
+        <button type="button" onclick="slowDown()">Slow Down</button>
+        <button type="button" onclick="spinStop()"> Spin / Stop</button>
+        <button type="button" onclick="speedUp()">Speed Up</button>
+        <button type="button" onclick="changeDirection()">Reverse</button>
+      </div>
+    </div>
+    
+
+
+    <script src="../lib/webgl-utils.js"></script>
+    <script src="../lib/webgl-debug.js"></script>
+    <script src="../lib/cuon-utils.js"></script>
+    <script src="../lib/cuon-matrix-mod.js"></script>
+    <!-- <script src="lib1.js"></script> -->
+    <script src="DaiYiming_ProjA.js"></script>
+  </body>
+</html>
